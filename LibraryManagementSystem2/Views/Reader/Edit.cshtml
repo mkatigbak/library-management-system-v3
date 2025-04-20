@@ -1,0 +1,21 @@
+﻿@model LibraryManagementSystem2.Models.Reader
+
+<h1 class="mb-4">Edit Reader</h1>
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="Id" class="form-label">ID</label>
+        <input type="text" id="Id" name="Id" class="form-control" value="@Model.Id" readonly />
+    </div>
+    <div class="col-md-6">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" id="Name" name="Name" class="form-control" value="@Model.Name" required />
+    </div>
+    <div class="col-md-6">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" required />
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+</form>
+<a href="/Reader" class="btn btn-secondary mt-3">Cancel</a>

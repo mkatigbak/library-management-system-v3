@@ -1,0 +1,12 @@
+﻿@model LibraryManagementSystem2.Models.Book
+
+<h1 class="mb-4">Book Details</h1>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">ID: @Model.Id</h5>
+        <h5 class="card-title">@Model.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Author: @Model.Author</h6>
+        <p class="card-text">Availability: @(Model.IsAvailable ? "Available" : "Not Available")</p>
+    </div>
+</div>
+<a href="/Book" class="btn btn-secondary mt-3">Back to List</a>

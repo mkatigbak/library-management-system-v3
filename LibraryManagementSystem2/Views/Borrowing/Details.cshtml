@@ -1,0 +1,13 @@
+﻿@model LibraryManagementSystem2.Models.Borrowing
+
+<h1 class="mb-4">Borrowing Details</h1>
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">Borrowing ID: @Model.Id</p>
+        <p class="card-text">Book ID: @Model.BookId</p>
+        <p class="card-text">Reader ID: @Model.ReaderId</p>
+        <p class="card-text">Borrow Date: @Model.BorrowDate.ToShortDateString()</p>
+        <p class="card-text">Return Date: @(Model.ReturnDate.HasValue ? Model.ReturnDate.Value.ToShortDateString() : "Not Returned")</p>
+    </div>
+</div>
+<a href="/Borrowing" class="btn btn-secondary mt-3">Back to List</a>

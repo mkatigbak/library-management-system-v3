@@ -1,0 +1,26 @@
+﻿@model LibraryManagementSystem2.Models.Borrowing
+
+<h1 class="mb-4">Edit Borrowing</h1>
+<form method="post" class="row g-3">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+    <div class="col-md-6">
+        <label for="BookId" class="form-label">Book ID</label>
+        <input type="number" id="BookId" name="BookId" class="form-control" value="@Model.BookId" required />
+    </div>
+    <div class="col-md-6">
+        <label for="ReaderId" class="form-label">Reader ID</label>
+        <input type="number" id="ReaderId" name="ReaderId" class="form-control" value="@Model.ReaderId" required />
+    </div>
+    <div class="col-md-6">
+        <label for="BorrowDate" class="form-label">Borrow Date</label>
+        <input type="date" id="BorrowDate" name="BorrowDate" class="form-control" value="@Model.BorrowDate.ToString("yyyy-MM-dd")" required />
+    </div>
+    <div class="col-md-6">
+        <label for="ReturnDate" class="form-label">Return Date</label>
+        <input type="date" id="ReturnDate" name="ReturnDate" class="form-control" value="@(Model.ReturnDate.HasValue ? Model.ReturnDate.Value.ToString("yyyy-MM-dd") : "")" />
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+</form>
+<a href="/Borrowing" class="btn btn-secondary mt-3">Cancel</a>

@@ -1,0 +1,23 @@
+﻿@model LibraryManagementSystem2.Models.Book
+
+<h1 class="mb-4">Add New Book</h1>
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" id="Title" name="Title" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" id="Author" name="Author" class="form-control" required />
+    </div>
+    <div class="col-md-6">
+        <label for="IsAvailable" class="form-label">Availability</label>
+        <select id="IsAvailable" name="IsAvailable" class="form-select">
+            <option value="true">Available</option>
+            <option value="false">Not Available</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </div>
+</form>

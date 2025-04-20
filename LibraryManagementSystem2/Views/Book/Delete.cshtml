@@ -1,0 +1,19 @@
+﻿@model LibraryManagementSystem2.Models.Book
+
+<h1 class="mb-4">Delete Book</h1>
+<div class="alert alert-danger">
+    Are you sure you want to delete the following book?
+</div>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">ID: @Model.Id</h5>
+        <h5 class="card-title">@Model.Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Author: @Model.Author</h6>
+        <p class="card-text">Availability: @(Model.IsAvailable ? "Available" : "Not Available")</p>
+    </div>
+</div>
+<form method="post" asp-action="DeleteConfirmed">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger mt-3">Delete</button>
+    <a href="/Book" class="btn btn-secondary mt-3">Cancel</a>
+</form>

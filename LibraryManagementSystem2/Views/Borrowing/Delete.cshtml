@@ -1,0 +1,20 @@
+﻿@model LibraryManagementSystem2.Models.Borrowing
+
+<h1 class="mb-4">Delete Borrowing</h1>
+<div class="alert alert-danger">
+    Are you sure you want to delete the following borrowing?
+</div>
+<div class="card">
+    <div class="card-body">
+        <p class="card-text">Borrowing ID: @Model.Id</p>
+        <p class="card-text">Book ID: @Model.BookId</p>
+        <p class="card-text">Reader ID: @Model.ReaderId</p>
+        <p class="card-text">Borrow Date: @Model.BorrowDate.ToShortDateString()</p>
+        <p class="card-text">Return Date: @(Model.ReturnDate.HasValue ? Model.ReturnDate.Value.ToShortDateString() : "Not Returned")</p>
+    </div>
+</div>
+<form method="post" asp-action="DeleteConfirmed">
+    <input type="hidden" id="Id" name="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger mt-3">Delete</button>
+    <a href="/Borrowing" class="btn btn-secondary mt-3">Cancel</a>
+</form>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LibraryManagementSystem2.Models.Borrowing>
+
+<h1 class="mb-4">Borrowings</h1>
+<a href="/Borrowing/Create" class="btn btn-primary mb-3">Add New Borrowing</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Borrowing ID</th>
+            <th>Book ID</th>
+            <th>Reader ID</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var borrowing in Model)
+        {
+            <tr>
+                <td>@borrowing.Id</td>
+                <td>@borrowing.BookId</td>
+                <td>@borrowing.ReaderId</td>
+                <td>@borrowing.BorrowDate.ToShortDateString()</td>
+                <td>@(borrowing.ReturnDate.HasValue ? borrowing.ReturnDate.Value.ToShortDateString() : "Not Returned")</td>
+                <td>
+                    <a href="/Borrowing/Details/@borrowing.Id" class="btn btn-info btn-sm">Details</a>
+                    <a href="/Borrowing/Edit/@borrowing.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="/Borrowing/Delete/@borrowing.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

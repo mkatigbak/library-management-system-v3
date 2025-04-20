@@ -1,0 +1,22 @@
+﻿@model LibraryManagementSystem2.Models.Borrowing
+
+<h1 class="mb-4">Add New Borrowing</h1>
+<form method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="BookId" class="form-label">Book ID</label>
+        <input type="number" id="BookId" name="BookId" class="form-control" value="@(Model?.BookId ?? 0)" required />
+        <span class="text-danger">@Html.ValidationMessageFor(m => m.BookId)</span>
+    </div>
+    <div class="col-md-6">
+        <label for="ReaderId" class="form-label">Reader ID</label>
+        <input type="number" id="ReaderId" name="ReaderId" class="form-control" value="@(Model?.ReaderId ?? 0)" required />
+        <span class="text-danger">@Html.ValidationMessageFor(m => m.ReaderId)</span>
+    </div>
+    <div class="col-md-6">
+        <label for="BorrowDate" class="form-label">Borrow Date</label>
+        <input type="date" id="BorrowDate" name="BorrowDate" class="form-control" value="@(Model?.BorrowDate.ToString("yyyy-MM-dd") ?? DateTime.Now.ToString("yyyy-MM-dd"))" required />
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Add Borrowing</button>
+    </div>
+</form>
